@@ -1,19 +1,29 @@
 "use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function SearchBar() {
+  const router = useRouter();
+  const handelSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
 
-    const handelSearch = (e) => {
-    
-}
-
+    if (name) {
+      router.push(`/list?name=${name}`);
+    }
+  };
 
   return (
-    <form onSubmit={handelSearch} className="flex items-center justify-between gap-4 bg-gray-100 p-2 rounded-md flex-1">
+    <form
+      onSubmit={handelSearch}
+      className="flex items-center justify-between gap-4 bg-gray-100 p-2 rounded-md flex-1"
+    >
       <input
         className="input flex-1 bg-transparent outline-none"
         type="text"
+        name="name"
         placeholder="Search"
       />
       <button type="submit">
