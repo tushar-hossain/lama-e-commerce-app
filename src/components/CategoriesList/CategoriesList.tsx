@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ProdactList() {
+export default function CategoriesList() {
   return (
     <div>
       
