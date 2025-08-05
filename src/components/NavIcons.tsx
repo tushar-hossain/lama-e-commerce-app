@@ -44,14 +44,16 @@ export default function NavIcons() {
         width={22}
         height={22}
       />
-      <div className="relative">
+      <div
+        className="relative cursor-pointer"
+        onClick={() => setIsCartOpen((prev) => !prev)}
+      >
         <Image
           className="cursor-pointer"
           src={"/cart.png"}
           alt="profile image"
           width={22}
           height={22}
-          onClick={() => setIsCartOpen((prev) => !prev)}
         />
         <div className=" absolute -top-4 -right-4 h-6 bg-lama rounded-full text-white text-sm flex items-center justify-center w-6">
           2
